@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('css/sb-admin-2.min.css')?>" rel="stylesheet">
 
 </head>
 
@@ -36,21 +35,30 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                        <img class="col-lg-6 d-none d-lg-block bg-login-image" src="<?= base_url('img/undraw_posting_photo.svg')?>" alt="">
+                            <div></div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">LOGIN</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user">
+                                    <p class="text-danger"><?= session()->getFlashdata('pesan') ?></p>
+                                    <form action="<?= base_url('login') ?>" method="POST" class="user">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
+                                            <input type="email" class="form-control form-control-user <?= ($validation->hasError('email') ? 'is-invalid' : '') ?>"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Enter Email Address..." name="email">
+                                                <div class="invalid-feedback">
+                                                <?= $validation->getError('email'); ?>
+                                                </div>
+                                                
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" class="form-control form-control-user <?= ($validation->hasError('email') ? 'is-invalid' : '') ?>"
+                                                id="exampleInputPassword" placeholder="Password" name="password">
+                                                <div class="invalid-feedback">
+                                                <?= $validation->getError('password'); ?>
+                                                </div>
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -59,9 +67,7 @@
                                                     Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
+                                        <button type="submit" class="btn btn-primary btn-user btn-block">Login</button>
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
                                             <i class="fab fa-google fa-fw"></i> Login with Google
@@ -75,7 +81,7 @@
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="http://localhost:8080/regist">Create an Account!</a>
+                                        <a class="small" href="<?= base_url('regist')?>">Create an Account!</a>
                                     </div>
                                 </div>
                             </div>
@@ -90,14 +96,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('vendor/jquery/jquery.min.js') ?>"></script>
+    <script src="<?= base_url('vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?= base_url('vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.min.js"></script>
+    <script src="<?= base_url('js/sb-admin-2.min.js')?>"></script>
 
 </body>
 

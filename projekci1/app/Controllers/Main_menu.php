@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 
-class Home extends BaseController
+class Main_menu extends BaseController
 {
     public function index(){
-        return view('login');
+        return view('main_menu');
     }
 }
