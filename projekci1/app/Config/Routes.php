@@ -14,5 +14,8 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Login::index');
 $routes->post('login', 'Login::login_action');
 $routes->get('regist', 'Regist::index');
-$routes->get('admin/home', 'Admin\Home::index');
-$routes->get('user/home', 'User\Home::index');
+$routes->get('forgot_password', 'ForgotPassword::index');
+$routes->get('logout', 'Login::logout');
+
+$routes->get('admin/home', 'Admin\Home::index', ['filter' => 'adminFilter']);
+$routes->get('user/home', 'User\Home::index', ['filter' => 'userFilter']);

@@ -9,16 +9,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Blank</title>
+    <title><?=$titles?></title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="<?=base_url('vendor/fontawesome-free/css/all.min.css')?>" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="<?= base_url('css/sb-admin-2.min.css') ?>" rel="stylesheet">
+    <link href="<?=base_url('css/sb-admin-2.min.css')?>" rel="stylesheet">
 
 </head>
 
@@ -64,15 +64,32 @@
                     <span>Components</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="py-2 collapse-inner rounded">
-                        <h6 class="collapse-header text-white">Custom Components:</h6>
-                        <a class="collapse-item text-light" href="buttons.html">Buttons</a>
-                        <a class="collapse-item text-light" href="cards.html">Cards</a>
+                    <div class=" py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Components:</h6>
+                        <a class="text-white collapse-item" href="buttons.html">Buttons</a>
+                        <a class="text-white collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>
             </li>
 
-            
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Utilities</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                    data-parent="#accordionSidebar">
+                    <div class="py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Custom Utilities:</h6>
+                        <a class="text-white collapse-item" href="utilities-color.html">Colors</a>
+                        <a class="text-white collapse-item" href="utilities-border.html">Borders</a>
+                        <a class="text-white collapse-item" href="utilities-animation.html">Animations</a>
+                        <a class="text-white collapse-item" href="utilities-other.html">Other</a>
+                    </div>
+                </div>
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -82,20 +99,13 @@
                 Addons
             </div>
 
-           
+            
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Charts</span></a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="tables.html">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Tables</span></a>
             </li>
 
             <!-- Divider -->
@@ -307,7 +317,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="<?=base_url('logout')?>" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -323,13 +333,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
                     <?= $this->renderSection('content') ?>
+                    <h1><?=$titles?></h1>
 
                 </div>
                 <!-- /.container-fluid -->
-
-                
 
             </div>
             <!-- End of Main Content -->
@@ -369,21 +377,21 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="<?=base_url('logout')?>">Logout</a>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('vendor/jquery/jquery.min.js') ?>"></script>
-    <script src="<?= base_url('vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
+    <script src="<?=base_url('vendor/jquery/jquery.min.js')?>"></script>
+    <script src="<?=base_url('vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="<?= base_url('vendor/jquery-easing/jquery.easing.min.js') ?>"></script>
+    <script src="<?=base_url('vendor/jquery-easing/jquery.easing.min.js')?>"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?= base_url('js/sb-admin-2.min.js') ?>"></script>
+    <script src="<?=base_url('js/sb-admin-2.min.js')?>"></script>
 
 </body>
 

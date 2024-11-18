@@ -78,7 +78,7 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="<?= base_url('forgot_password') ?>">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
                                         <a class="small" href="<?= base_url('regist')?>">Create an Account!</a>

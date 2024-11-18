@@ -33,6 +33,11 @@ class Login extends BaseController
              $cekPassword = password_verify($password, $password_db);
               if($cekPassword){
 
+                $session_data = [
+                    'logged_in' => true,
+                    'roleid' => $cekUsername['role_id']
+                ];
+                $session->set($session_data);
                 switch($cekUsername['role_id']){
                     case 'admin':
                         return redirect()->to('admin/home');
@@ -57,4 +62,11 @@ class Login extends BaseController
             }
         }
     }
+
+    public function logout() {
+        $session = session();
+        session()->destroy();
+        return redirect()->to('/');
+    }
+
 }
