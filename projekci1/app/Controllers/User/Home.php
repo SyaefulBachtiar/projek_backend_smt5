@@ -9,6 +9,9 @@ class Home extends BaseController
 {
     public function index()
     {
-        echo "halaman User";
+        $data = [
+            'titles' => 'Table Mahasiswa/User'
+        ];
+        return view('user/home', $data);
     }
 }

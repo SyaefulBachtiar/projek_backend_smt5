@@ -34,8 +34,9 @@ class Login extends BaseController
               if($cekPassword){
 
                 $session_data = [
+                    'nama'      => $cekUsername['name'],
                     'logged_in' => true,
-                    'roleid' => $cekUsername['role_id']
+                    'roleid'    => $cekUsername['role_id']
                 ];
                 $session->set($session_data);
                 switch($cekUsername['role_id']){
