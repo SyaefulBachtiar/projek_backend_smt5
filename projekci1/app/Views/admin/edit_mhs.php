@@ -18,7 +18,7 @@
 <?= csrf_field(); ?>
 <div class="form-group">
 <label for="nim">NIM*</label>
-<input class="form-control" type="text" name="nim"
+<input class="form-control" value="<?= $mhs['npm'];?>" type="text" name="nim"
 
 placeholder="NIM Mahasiswa" required/>
 <div class="invalid-feedback">
@@ -27,7 +27,7 @@ placeholder="NIM Mahasiswa" required/>
 </div>
 <div class="form-group">
 <label for="nama">Nama*</label>
-<input class="form-control" type="text" name="nama"
+<input class="form-control" value="<?= $mhs['nama'] ?>" type="text" name="nama"
 
 placeholder="Nama Mahasiswa" required/>
 <div class="invalid-feedback">
@@ -35,8 +35,7 @@ placeholder="Nama Mahasiswa" required/>
 </div>
 <div class="form-group">
 <label for="email">Email*</label>
-
-<input class="form-control" type="email" name="email"
+<input class="form-control" value="<?= $mhs['email'] ?>" type="email" name="email">
 
 id="email" placeholder="Email" required/>
 <div class="invalid-feedback">
@@ -44,7 +43,7 @@ id="email" placeholder="Email" required/>
 </div>
 <div class="form-group">
 <label for="tanggal_lahir">Tanggal lahir*</label>
-<input class="form-control" type="date" name="tanggal_lahir"
+<input class="form-control" type="date" value="<?= $mhs['tanggal_lahir']; ?>" name="tanggal_lahir"
 
 placeholder="Nama Mahasiswa" required/>
 <div class="invalid-feedback">
@@ -52,7 +51,7 @@ placeholder="Nama Mahasiswa" required/>
 </div>
 <div class="form-group">
 <label for="jenis_kelamin">Jenis Kelamin*</label>
-<select name="jenis_kelamin" class="form-control">
+<select name="jenis_kelamin" value="<?= $mhs['jenis_kelamin']; ?>" class="form-control">
 <option value="L">Laki-laki</option>
 <option value="P">Perempuan</option>
 </select>
@@ -61,17 +60,14 @@ placeholder="Nama Mahasiswa" required/>
 </div>
 <div class="form-group">
 <label for="alamat">Alamat*</label>
-<textarea class="form-control" name="alamat"
-
-required></textarea>
+<textarea class="form-control" name="alamat" required></textarea>
 
 <div class="invalid-feedback">
 </div>
 </div>
 <div class="form-group">
 <label for="image">Image*</label>
-<input class="form-control-file"
-type="file" name="image" required/>
+<input class="form-control-file" type="file" name="image" required/>
 <div class="invalid-feedback">
 </div>
 </div>

@@ -44,6 +44,15 @@ class Form_mhs extends BaseController
         return view('admin/edit_mhs', $data);
     }
  
+    public function delete($id_mhs){
+    //     $Mhs_model = new MhsModel();
+
+    //     $Mhs_model->delete($id_mhs);
+
+    
+
+    //    return view('admin/home');
+    }
 
 
 }

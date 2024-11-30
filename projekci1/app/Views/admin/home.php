@@ -61,7 +61,7 @@
                         <td><?= $data['create_date']?></td>
                         <td>
                             <div class="d-flex">
-                                <a href="<?= base_url('admin/edit'); ?>">
+                                <a href="<?= base_url('admin/edit/'. $data['id_mhs']); ?>">
                                 <div class="d-inline p-2"><i data-feather='edit'></i></div>
                                 </a>
                                 <a href="#">
