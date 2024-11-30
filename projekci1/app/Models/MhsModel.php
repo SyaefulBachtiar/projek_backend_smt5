@@ -12,7 +12,7 @@ class MhsModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['npm','nama','alamat','tanggal_lahir','jenis_kelamin','email','foto','create_date'];
+    protected $allowedFields    = ['id_mhs', 'npm','nama','alamat','tanggal_lahir','jenis_kelamin','email','foto','create_date'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

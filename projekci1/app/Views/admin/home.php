@@ -14,7 +14,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
 <div class="card-header">
-<a href="<?php echo site_url('admin/form_mhs') ?>"><i class="fas fa-plus"></i> Tambah</a>
+<a href="<?= base_url('admin/form') ?>"><i class="fas fa-plus"></i> Tambah</a>
 </div>
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
@@ -61,7 +61,7 @@
                         <td><?= $data['create_date']?></td>
                         <td>
                             <div class="d-flex">
-                                <a href="<?= base_url('admin/edit') ?>">
+                                <a href="<?= base_url('admin/edit'); ?>">
                                 <div class="d-inline p-2"><i data-feather='edit'></i></div>
                                 </a>
                                 <a href="#">

@@ -361,6 +361,8 @@
         </div>
     </div>
 
+
+
     <!-- Bootstrap core JavaScript-->
     <script src="<?=base_url('vendor/jquery/jquery.min.js')?>"></script>
     <script src="<?=base_url('vendor/bootstrap/js/bootstrap.bundle.min.js')?>"></script>
@@ -382,6 +384,59 @@
     <script>
       feather.replace();
     </script>
+
+    <script>
+
+        // alert tambah data
+        $(function(){
+            <?php if(session()->has('berhasil')) :?>
+            Swal.fire({
+            title: "Berhasil di tambah!",
+            text: "<?= $_SESSION['berhasil']; ?>",
+            icon: "success"
+            });
+                <?php endif; ?>
+        });
+
+        // alert untuk delete
+        // const swalWithBootstrapButtons = Swal.mixin({
+        // customClass: {
+        //     confirmButton: "btn btn-success",
+        //     cancelButton: "btn btn-danger"
+        // },
+        // buttonsStyling: false
+        // });
+        // swalWithBootstrapButtons.fire({
+        // title: "Are you sure?",
+        // text: "You won't be able to revert this!",
+        // icon: "warning",
+        // showCancelButton: true,
+        // confirmButtonText: "Yes, delete it!",
+        // cancelButtonText: "No, cancel!",
+        // reverseButtons: true
+        // }).then((result) => {
+        // if (result.isConfirmed) {
+        //     swalWithBootstrapButtons.fire({
+        //     title: "Deleted!",
+        //     text: "Your file has been deleted.",
+        //     icon: "success"
+        //     });
+        // } else if (
+        //     /* Read more about handling dismissals below */
+        //     result.dismiss === Swal.DismissReason.cancel
+        // ) {
+        //     swalWithBootstrapButtons.fire({
+        //     title: "Cancelled",
+        //     text: "Your imaginary file is safe :)",
+        //     icon: "error"
+        //     });
+        // }
+        // });
+
+    </script>
+
+    <!-- sweet alert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

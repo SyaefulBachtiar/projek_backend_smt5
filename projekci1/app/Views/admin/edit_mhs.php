@@ -14,7 +14,7 @@
 
 </div>
 <div class="card-body">
-<form action="<?= base_url('admin/store') ?>" method="POST" class="user">
+<form action="<?= base_url('admin/update') ?>" method="POST" class="user">
 <?= csrf_field(); ?>
 <div class="form-group">
 <label for="nim">NIM*</label>
