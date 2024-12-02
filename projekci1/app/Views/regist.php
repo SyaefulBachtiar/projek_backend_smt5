@@ -30,7 +30,7 @@
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-                <img class="col-lg-4 d-none d-lg-block bg-login-image" src="img/undraw_posting_photo.svg" alt="">
+                <img class="col-lg-4 d-none d-lg-block bg-login-image" src="<?= base_url('img/undraw_posting_photo.svg') ?>" alt="">
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
@@ -47,29 +47,25 @@
                                 </div>
                                 <div class="form-group">
                                         <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                            id="exampleInputPassword" placeholder="Password" name="password">
                                             </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control form-control-user"
+                                        <input type="password" class="form-control form-control-user" name="repeat_password"
                                             id="exampleRepeatPassword" placeholder="Repeat Password">
+                                            <p class="text-danger"><?= session()->getFlashdata('pesan') ?></p>
                                     </div>
-
+                                    <div class="form-group">
+                                        <input type="text" class="form-control form-control-user" name="role_id" id="exampleRoleId"
+                                            placeholder="Role Id">
+                                </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">Registrasi Account</button>
-
-                                <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Register with Google
-                                </a>
-                                <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                    <i class="fab fa-facebook-f fa-fw"></i> Register with Facebook
-                                </a>
                             </form>
                             <hr>
                             <div class="text-center">
                                 <a class="small" href="forgot-password.html">Forgot Password?</a>
                             </div>
                             <div class="text-center">
-                                <a class="small" href="login.html">Already have an account? Login!</a>
+                                <a class="small" href="<?= base_url('/') ?>">Already have an account? Login!</a>
                             </div>
                         </div>
                     </div>

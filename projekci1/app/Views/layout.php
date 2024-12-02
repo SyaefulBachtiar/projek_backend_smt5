@@ -30,6 +30,7 @@
 
 </head>
 
+
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -50,11 +51,19 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
+             <?php if(session()->get('roleid') == 'admin'): ?>
             <li class="nav-item">
                 <a class="nav-link" href="<?= base_url('admin/home') ?>">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
+            <?php else: ?>
+                <li class="nav-item">
+                <a class="nav-link" href="<?= base_url('user/home') ?>">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+                <?php endif; ?>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
@@ -289,10 +298,6 @@
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Settings
                                 </a>
-                                <a class="dropdown-item" href="#">
-                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Activity Log
-                                </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="<?=base_url('logout')?>" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -361,6 +366,8 @@
         </div>
     </div>
 
+    
+
 
 
     <!-- Bootstrap core JavaScript-->
@@ -391,49 +398,70 @@
         $(function(){
             <?php if(session()->has('berhasil')) :?>
             Swal.fire({
-            title: "Berhasil di tambah!",
+            title: "Berhasil!",
             text: "<?= $_SESSION['berhasil']; ?>",
             icon: "success"
             });
                 <?php endif; ?>
         });
 
-        // alert untuk delete
-        // const swalWithBootstrapButtons = Swal.mixin({
-        // customClass: {
-        //     confirmButton: "btn btn-success",
-        //     cancelButton: "btn btn-danger"
-        // },
-        // buttonsStyling: false
-        // });
-        // swalWithBootstrapButtons.fire({
-        // title: "Are you sure?",
-        // text: "You won't be able to revert this!",
-        // icon: "warning",
-        // showCancelButton: true,
-        // confirmButtonText: "Yes, delete it!",
-        // cancelButtonText: "No, cancel!",
-        // reverseButtons: true
-        // }).then((result) => {
-        // if (result.isConfirmed) {
-        //     swalWithBootstrapButtons.fire({
-        //     title: "Deleted!",
-        //     text: "Your file has been deleted.",
-        //     icon: "success"
-        //     });
-        // } else if (
-        //     /* Read more about handling dismissals below */
-        //     result.dismiss === Swal.DismissReason.cancel
-        // ) {
-        //     swalWithBootstrapButtons.fire({
-        //     title: "Cancelled",
-        //     text: "Your imaginary file is safe :)",
-        //     icon: "error"
-        //     });
-        // }
-        // });
+
+        // alert delete
+        $(function(){
+            <?php if(session()->has('delete')) :?>
+            Swal.fire({
+            title: "Berhasil di Delete!",
+            text: "<?= session()->getFlashdata('delete')?>",
+            icon: "success"
+            });
+                <?php endif; ?>
+        });
+
+
+        // alert question  delete
+    //     $(function(){
+    //        
+    //     const swalWithBootstrapButtons = Swal.mixin({
+    //     customClass: {
+    //         confirmButton: "btn btn-success",
+    //         cancelButton: "btn btn-danger"
+    //     },
+    //     buttonsStyling: false
+    //     });
+    //     swalWithBootstrapButtons.fire({
+    //     title: "Are you sure?",
+    //     text: "You won't be able to revert this!",
+    //     icon: "warning",
+    //     showCancelButton: true,
+    //     confirmButtonText: "Yes, delete it!",
+    //     cancelButtonText: "No, cancel!",
+    //     reverseButtons: true
+    //     }).then((result) => {
+    //     if (result.isConfirmed) {
+    //         swalWithBootstrapButtons.fire({
+    //         title: "Deleted!",
+    //         text: "Your file has been deleted.",
+    //         icon: "success"
+    //         });
+    //     } else if (
+    //         /* Read more about handling dismissals below */
+    //         result.dismiss === Swal.DismissReason.cancel
+    //     ) {
+    //         swalWithBootstrapButtons.fire({
+    //         title: "Cancelled",
+    //         text: "Your imaginary file is safe :)",
+    //         icon: "error"
+    //         });
+    //     }
+    //     });
+    //    
+
+    // });
 
     </script>
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     <!-- sweet alert -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

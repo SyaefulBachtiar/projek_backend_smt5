@@ -14,7 +14,7 @@
 
 </div>
 <div class="card-body">
-<form action="<?= base_url('admin/store') ?>" method="POST" class="user">
+<form action="<?= base_url('admin/store') ?>" method="POST"  enctype="multipart/form-data" class="user">
 <?= csrf_field(); ?>
 <div class="form-group">
 <label for="nim">NIM*</label>
@@ -72,6 +72,12 @@ required></textarea>
 <label for="image">Image*</label>
 <input class="form-control-file"
 type="file" name="image" required/>
+<div class="invalid-feedback">
+</div>
+</div>
+<div class="form-group">
+<label for="create_date">Create date*</label>
+<input class="form-control" name="create_date" required type="datetime-local">
 <div class="invalid-feedback">
 </div>
 </div>

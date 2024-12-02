@@ -48,7 +48,9 @@
                 <tbody>
                     <?php foreach($mhs as $data): ?>
                     <tr>
-                        <td><?= $data['foto']?></td>
+                        <td>
+                        <img src="<?= base_url('img/' . $data['foto']) ?>" alt="Foto Mahasiswa" width="50" height="50">
+                        </td>
                         <td><?= $data['npm'] ?></td>
                         <td><?= $data['nama']?></td>
                         <td><?= $data['alamat']?></td>

@@ -14,12 +14,11 @@
 
 </div>
 <div class="card-body">
-<form action="<?= base_url('admin/update') ?>" method="POST" class="user">
+<form action="<?= base_url('admin/update/'. $mhs['id_mhs']) ?>" method="POST" class="user" enctype="multipart/form-data">
 <?= csrf_field(); ?>
 <div class="form-group">
-<label for="nim">NIM*</label>
-<input class="form-control" value="<?= $mhs['npm'];?>" type="text" name="nim"
-
+<label for="npm">NIM*</label>
+<input class="form-control" value="<?= $mhs['npm'];?>" type="text" name="npm"
 placeholder="NIM Mahasiswa" required/>
 <div class="invalid-feedback">
 </div>
@@ -28,40 +27,34 @@ placeholder="NIM Mahasiswa" required/>
 <div class="form-group">
 <label for="nama">Nama*</label>
 <input class="form-control" value="<?= $mhs['nama'] ?>" type="text" name="nama"
-
 placeholder="Nama Mahasiswa" required/>
 <div class="invalid-feedback">
 </div>
 </div>
 <div class="form-group">
 <label for="email">Email*</label>
-<input class="form-control" value="<?= $mhs['email'] ?>" type="email" name="email">
-
-id="email" placeholder="Email" required/>
+<input class="form-control" type="email" value="<?= $mhs['email'] ?>" name="email" id="email" placeholder="Email" required/>
 <div class="invalid-feedback">
 </div>
 </div>
 <div class="form-group">
 <label for="tanggal_lahir">Tanggal lahir*</label>
-<input class="form-control" type="date" value="<?= $mhs['tanggal_lahir']; ?>" name="tanggal_lahir"
-
-placeholder="Nama Mahasiswa" required/>
+<input class="form-control" type="date" value="<?= $mhs['tanggal_lahir']; ?>" name="tanggal_lahir" required/>
 <div class="invalid-feedback">
 </div>
 </div>
 <div class="form-group">
 <label for="jenis_kelamin">Jenis Kelamin*</label>
-<select name="jenis_kelamin" value="<?= $mhs['jenis_kelamin']; ?>" class="form-control">
-<option value="L">Laki-laki</option>
-<option value="P">Perempuan</option>
+<select name="jenis_kelamin" class="form-control">
+<option value="Laki-laki" <?= $mhs['jenis_kelamin'] == 'Laki-laki' ? 'selected' : '' ?>>Laki-laki</option>
+<option value="Perempuan" <?= $mhs['jenis_kelamin'] == 'Perempuan' ? 'selected' : '' ?>>Perempuan</option>
 </select>
 <div class="invalid-feedback">
 </div>
 </div>
 <div class="form-group">
 <label for="alamat">Alamat*</label>
-<textarea class="form-control" name="alamat" required></textarea>
-
+<textarea class="form-control" name="alamat" required><?= $mhs['alamat'] ?></textarea>
 <div class="invalid-feedback">
 </div>
 </div>
@@ -71,6 +64,13 @@ placeholder="Nama Mahasiswa" required/>
 <div class="invalid-feedback">
 </div>
 </div>
+<div class="form-group">
+<label for="create_date">Create date*</label>
+<input class="form-control" name="create_date" type="datetime-local" value="<?= $mhs['create_date']; ?>"  required/>
+<div class="invalid-feedback">
+</div>
+</div>
+
 <button type="submit" class="btn btn-success pull-center">
 
 Submit </button>
